@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Logger } from 'angular2-logger/core';
-import '../sass/styles.scss';
 
 @Component({
   selector: 'my-app',
@@ -11,12 +10,4 @@ export class AppComponent {
 
   constructor(private $log: Logger) { }
 
-  resetScores() {
-    this.$log.info('reset');
-    return false;
-  }
-  addScores(text: String) {
-    this.$log.info(text);
-    return false;
-  }
 }
