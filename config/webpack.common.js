@@ -45,6 +45,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'style', 
           'css?sourceMap' +
+          '!resolve-url-loader' +
           '!sass?outputStyle=expanded&sourceMap'
         )
       },
