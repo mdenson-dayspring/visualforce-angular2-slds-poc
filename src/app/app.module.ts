@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LOG_LOGGER_PROVIDERS } from 'angular2-logger/core';
 
 import { AppComponent } from './app.component';
-import { HoursLogComponent } from './hours-log/hours-log.component';
-import { HoursLogTableComponent } from './hours-log/table/hours-log-table.component';
-import { HoursLogTableRowComponent } from './hours-log/table-row/hours-log-table-row.component';
+
+import { HoursLogModule } from './hours-log/hours-log.module';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    HoursLogModule,
+    AppRoutingModule
   ],
   declarations: [
-    AppComponent,
-    HoursLogComponent,
-    HoursLogTableComponent,
-    HoursLogTableRowComponent
+    AppComponent
   ],
   bootstrap: [AppComponent],
   providers: [LOG_LOGGER_PROVIDERS]
