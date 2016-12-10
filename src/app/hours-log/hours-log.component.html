@@ -1,6 +1,20 @@
 <div class="slds-page-header" role="banner">
-    <p class="slds-text-heading--label">Shift Report</p>
-    <h1 class="slds-text-heading--medium">Hourly Log</h1>
-    <p class="slds-text-body--small slds-m-top--x-small">1 items</p>
+    <div class="slds-grid">
+        <div class="slds-has-flexi-truncate">
+            <div class="slds-media slds-no-space slds-grow">
+                <div class="slds-media__figure">
+                    <svg aria-hidden="true" class="slds-icon slds-icon-standard-recent">
+                        <use xlink:href="/resource/1481312167000/SLDS214/assets/icons/standard-sprite/svg/symbols.svg#recent"></use>
+                    </svg>
+                </div>
+                <div class="slds-media__body">
+                    <p class="slds-text-title--caps slds-line-height--reset">Shift Report</p>
+                    <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Hourly Log</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slds-page-header__detail-row">
+        <hours-log-table></hours-log-table>
+    </div>
 </div>
-<hours-log-table></hours-log-table>

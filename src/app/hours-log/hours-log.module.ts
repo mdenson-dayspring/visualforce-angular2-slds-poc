@@ -7,6 +7,7 @@ import { HoursLogTableComponent } from './table/hours-log-table.component';
 import { HoursLogTableRowComponent } from './table-row/hours-log-table-row.component';
 
 import { HoursLogRoutingModule } from './hours-log-routing.module';
+import { FormatHourPipe } from './format-hour.pipe';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { HoursLogRoutingModule } from './hours-log-routing.module';
   declarations: [
     HoursLogComponent,
     HoursLogTableComponent,
-    HoursLogTableRowComponent
+    HoursLogTableRowComponent,
+    FormatHourPipe
   ],
   bootstrap: [HoursLogComponent],
   providers: [LOG_LOGGER_PROVIDERS]

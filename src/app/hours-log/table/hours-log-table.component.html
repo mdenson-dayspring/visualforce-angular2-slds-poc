@@ -1,5 +1,5 @@
 <ul class="slds-has-dividers--bottom-space">
-    <li class="slds-item">
-        <hours-log-table-row></hours-log-table-row>
+    <li *ngFor="let hour of hours" class="slds-item" >
+        <hours-log-table-row [hour]="hour"></hours-log-table-row>
     </li>
 </ul>

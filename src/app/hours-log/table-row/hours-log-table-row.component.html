@@ -2,21 +2,17 @@
     <div class="slds-size--1-of-1 slds-medium-size--4-of-12">
         <div class="slds-grid slds-wrap slds-grid--pull-padded">
             <div class="slds-p-horizontal--small slds-size--1-of-4">
-                <h3>11:00am</h3>
+                <h3>{{ hour.hour | formatHour }}</h3>
             </div>
             <div class="slds-p-horizontal--small slds-size--3-of-4">
-                <h4>N/A</h4>
+                <h4>{{ hour.mood }}</h4>
             </div>
         </div>
     </div>
     <div class="slds-p-horizontal--medium slds-size--1-of-1 slds-medium-size--7-of-12">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum turpis neque, ut mollis odio porta at.
-            Maecenas justo ipsum, facilisis vitae vehicula in, accumsan id sapien. Donec lacinia augue leo, a luctus lorem
-            ullamcorper eu. Proin quis sollicitudin nulla. Nulla dictum ligula ac sed.</p>
+        <p>{{ hour.comment }}</p>
     </div>
     <div class="slds-size--1-of-1 slds-medium-size--1-of-12 slds-clearfix">
-        <button class="slds-button slds-button--neutral slds-button slds-button--neutral slds-float--right">
-                Edit
-            </button>
+        <button class="slds-button slds-button--neutral slds-button slds-button--neutral slds-float--right">Edit</button>
     </div>
 </div>
