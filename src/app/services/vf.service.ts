@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Logger } from 'angular2-logger/core';
+import { Observable } from 'rxjs/Observable';
+import { Subscriber } from 'rxjs/Subscriber';
+
+import { ShiftReport } from '../models/shift-report';
 
 import { EnvService } from './env.service';
 
@@ -7,19 +11,27 @@ import { EnvService } from './env.service';
 export class VFService {
   constructor(private $env: EnvService, private $log: Logger) {
     this.$log.debug('VFService: Logged In User is \'' + this.$env.loggedInUser + '\'.');
-    this.fetchShiftReports();
   }
-  private fetchShiftReports(): void {
-      let sr = new window.SObjectModel.Shift_Report__c();
 
+  fetchShiftReport(): Observable<ShiftReport> {
+    let sr = new window.SObjectModel.Shift_Report__c();
+
+    return Observable.create((subscriber: Subscriber<ShiftReport>) => {
       sr.retrieve({ limit: 100 }, (err: ROError, records: RORecord[], event: any) => {
         if (err) {
-          alert(err.message);
+          subscriber.error(new Error(err.message));
         } else {
           records.forEach((record: RORecord) => {
-            this.$log.debug(record.get('Start_Hour__c') + ' ' + record.get('End_Hour__c'));
+            let shiftReport = new ShiftReport()
+            shiftReport.startHour = record.get('Start_Hour__c');
+            shiftReport.endHour = record.get('End_Hour__c');
+
+            subscriber.next(shiftReport);
+            this.$log.debug(shiftReport);
           });
+          subscriber.complete();
         }
       });
-    };
+    });
+  }
 }
