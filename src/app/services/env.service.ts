@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 
+export interface LoggedInUser {
+    id: string;
+    contactId: string;
+    profileId: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+}
+
 export interface Parameters {
-    loggedInUser: string;
+    loggedInUser: LoggedInUser;
 }
 
 @Injectable()
 export class EnvService {
     public static params: Parameters;
-    loggedInUser: string;
+    loggedInUser: LoggedInUser;
 
     public static inject(parameters: Parameters) {
         EnvService.params = parameters;

@@ -14,13 +14,9 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: shiftReport.Actions): State {
   switch (action.type) {
-    case shiftReport.ACTION.LOAD:
-      return state;
-
     case shiftReport.ACTION.LOAD_SUCCESS:
-      console.log(action.payload);
       return {
-        id: '',
+        id: action.payload.id,
         report: action.payload
       };
 

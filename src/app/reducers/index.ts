@@ -30,5 +30,4 @@ export function reducer(state: any, action: any) {
 }
 
 export const getShiftReportState = (state: State) => state.shiftReport;
-
 export const getShiftReport = (state: State) => state.shiftReport.report;
