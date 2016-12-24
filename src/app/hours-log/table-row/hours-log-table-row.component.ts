@@ -15,6 +15,7 @@ import { HourLog } from '../../models/hour-log';
 })
 export class HoursLogTableRowComponent {
   @Input() hour: HourLog;
+  @Input() pageReadOnly: boolean;
   @Input() editMode: boolean;
 
   constructor(private store: Store<fromRoot.State>, private $log: Logger) { }

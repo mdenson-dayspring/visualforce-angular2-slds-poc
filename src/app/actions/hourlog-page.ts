@@ -4,10 +4,16 @@ import { type } from '../util';
 import { HourLog } from '../models/hour-log';
 
 export const ACTION = {
-  OPEN:   type('[HourLog] Open'),
-  CLOSE:  type('[HourLog] Close'),
-  SAVE:   type('[HourLog] Save')
+  EDIT_PAGE:  type('[HourLog] Edit Page'),
+
+  OPEN:       type('[HourLog] Open'),
+  CLOSE:      type('[HourLog] Close'),
+  SAVE:       type('[HourLog] Save')
 };
+
+export class EditPageAction implements Action {
+  type = ACTION.EDIT_PAGE;
+}
 
 export class OpenAction implements Action {
   type = ACTION.OPEN;
@@ -28,4 +34,5 @@ export class SaveAction implements Action {
 export type Actions
   = OpenAction
   | CloseAction
-  | SaveAction;
+  | SaveAction
+  | EditPageAction;

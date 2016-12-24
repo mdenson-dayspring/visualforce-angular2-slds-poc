@@ -13,8 +13,13 @@
                 </div>
             </div>
         </div>
+        <div class="slds-col slds-no-flex slds-grid slds-align-top" *ngIf="readOnly">
+            <div class="slds-button-group" role="group">
+                <button class="slds-button slds-button--neutral" (click)="clickEdit()">Edit</button>
+            </div>
+        </div>
     </div>
     <div class="slds-page-header__detail-row">
-        <hours-log-table [shift]="shift$ | async" [openRow]="(pageState$ | async)?.openPanel"></hours-log-table>
+        <hours-log-table [shift]="shift$ | async" [pageReadOnly]="readOnly" [openRow]="(pageState$ | async)?.openRow"></hours-log-table>
     </div>
 </div>

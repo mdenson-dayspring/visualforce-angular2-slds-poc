@@ -10,6 +10,7 @@ import { ShiftReport } from '../../models/shift-report';
   styles: [require('./hours-log-table.component.scss')]
 })
 export class HoursLogTableComponent {
+  @Input() pageReadOnly: boolean;
   @Input() shift: ShiftReport;
   @Input() openRow: number;
 

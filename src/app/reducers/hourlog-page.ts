@@ -3,22 +3,32 @@ import { HourLog } from '../models/hour-log';
 import * as hourLogPage from '../actions/hourlog-page';
 
 export interface State {
-  openPanel: number;
+  readOnly: boolean;
+  openRow: number;
 };
 
 const initialState: State = {
-  openPanel: undefined
+  readOnly: undefined,
+  openRow: undefined
 };
 
 export function reducer(state = initialState, action: hourLogPage.Actions): State {
   switch (action.type) {
+    case hourLogPage.ACTION.EDIT_PAGE:
+      return {
+        readOnly: false,
+        openRow: undefined
+      };
+
     case hourLogPage.ACTION.OPEN:
       return {
-        openPanel: action.payload
+        readOnly: state.readOnly,
+        openRow: action.payload
       };
     case hourLogPage.ACTION.CLOSE:
       return {
-        openPanel: undefined
+        readOnly: state.readOnly,
+        openRow: undefined
       };
 
     default:
@@ -27,4 +37,3 @@ export function reducer(state = initialState, action: hourLogPage.Actions): Stat
 }
 
 export const getHourLogPageState = (state: State) => state;
-export const getHourLogPage = (state: State) => state.openPanel;
