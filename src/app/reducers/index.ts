@@ -6,14 +6,17 @@ import { compose } from '@ngrx/core/compose';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
+import * as fromHourLogPage from './hourlog-page';
 import * as fromShiftReport from './shift-report';
 
 export interface State {
+    hourLogPage: fromHourLogPage.State;
     shiftReport: fromShiftReport.State;
     router: fromRouter.RouterState;
 }
 
 const reducers = {
+    hourLogPage: fromHourLogPage.reducer,
     shiftReport: fromShiftReport.reducer,
     router: fromRouter.routerReducer
 };
@@ -28,6 +31,8 @@ export function reducer(state: any, action: any) {
         return developmentReducer(state, action);
     }
 }
+
+export const getHourLogPageState = (state: State) => state.hourLogPage;
 
 export const getShiftReportState = (state: State) => state.shiftReport;
 export const getShiftReport = (state: State) => state.shiftReport.report;

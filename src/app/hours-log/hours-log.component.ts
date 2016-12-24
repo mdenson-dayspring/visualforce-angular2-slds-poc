@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 import * as fromRoot from '../reducers';
+import * as fromHourLogPage from '../reducers/hourlog-page';
 import { ShiftReport } from '../models/shift-report';
 
 @Component({
@@ -14,9 +15,11 @@ import { ShiftReport } from '../models/shift-report';
 })
 export class HoursLogComponent {
   shift$: Observable<ShiftReport>;
+  pageState$: Observable<fromHourLogPage.State>;
 
   constructor(store: Store<fromRoot.State>, private $log: Logger) {
     this.shift$ = store.select(fromRoot.getShiftReport);
+    this.pageState$ = store.select(fromRoot.getHourLogPageState);
   }
 
 }

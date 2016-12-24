@@ -1,5 +1,5 @@
 <ul class="slds-has-dividers--bottom-space">
     <li *ngFor="let hour of shift?.hourLog" class="slds-item" >
-        <hours-log-table-row [hour]="hour"></hours-log-table-row>
+        <hours-log-table-row [hour]="hour" [editMode]="openRow == hour.hour"></hours-log-table-row>
     </li>
 </ul>

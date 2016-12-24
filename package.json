@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --inline --progress --port 3000 --https",
     "test": "karma start",
     "lint": "tslint 'src/**/*.ts'",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "build": "rimraf dist && webpack -p --config config/webpack.prod.js --progress --profile --bail"
   },
   "licenses": [
     {

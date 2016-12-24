@@ -15,6 +15,6 @@
         </div>
     </div>
     <div class="slds-page-header__detail-row">
-        <hours-log-table [shift]="shift$ | async"></hours-log-table>
+        <hours-log-table [shift]="shift$ | async" [openRow]="(pageState$ | async)?.openPanel"></hours-log-table>
     </div>
 </div>

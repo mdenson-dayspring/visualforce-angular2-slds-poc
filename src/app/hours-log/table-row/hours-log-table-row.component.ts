@@ -1,5 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Logger } from 'angular2-logger/core';
+import { Subject } from 'rxjs/Subject';
+
+import * as fromRoot from '../../reducers';
+import * as page from '../../actions/hourlog-page';
 
 import { HourLog } from '../../models/hour-log';
 
@@ -10,7 +15,18 @@ import { HourLog } from '../../models/hour-log';
 })
 export class HoursLogTableRowComponent {
   @Input() hour: HourLog;
+  @Input() editMode: boolean;
 
-  constructor(private $log: Logger) { }
+  constructor(private store: Store<fromRoot.State>, private $log: Logger) { }
 
+  clickEdit() {
+    this.$log.debug('clicked edit');
+    this.store.dispatch(new page.OpenAction(this.hour.hour));
+  }
+  clickSave() {
+    this.store.dispatch(new page.CloseAction(this.hour.hour));
+  }
+  clickCancel() {
+    this.store.dispatch(new page.CloseAction(this.hour.hour));
+  }
 }

@@ -11,6 +11,7 @@ import { ShiftReport } from '../../models/shift-report';
 })
 export class HoursLogTableComponent {
   @Input() shift: ShiftReport;
+  @Input() openRow: number;
 
   constructor(private $log: Logger) { }
 
