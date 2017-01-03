@@ -13,7 +13,7 @@ import * as shiftReport from './actions/shift-report';
 })
 export class AppComponent {
 
-  constructor(private store: Store<fromRoot.State>, private $log: Logger) { 
+  constructor(private store: Store<fromRoot.State>, private $log: Logger) {
     this.store.dispatch(new shiftReport.LoadAction());
   }
 }

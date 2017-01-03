@@ -22,7 +22,7 @@ export class VFService {
           subscriber.error(new Error(err.message));
         } else {
           records.forEach((record: RORecord) => {
-            let shiftReport = new ShiftReport()
+            let shiftReport = new ShiftReport();
             shiftReport.id = record.get('Id');
 
             shiftReport.hourComment = [
