@@ -2,33 +2,33 @@
 # yarn lockfile v1
 
 
-"@angular/common@~2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.1.1.tgz#4b28de02c07f1395fbbdb403983c82a47490f39e"
+"@angular/common@~2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.1.tgz#a70167430574959c3423ac96ebdec98032d3500d"
 
-"@angular/compiler@~2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.1.1.tgz#41d04cdd121ab17d7e4d4e660512fe424949fbd6"
+"@angular/compiler@~2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.1.tgz#62b4fbfc53c934bd5def78db594cbf245b3f446a"
 
-"@angular/core@~2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.1.1.tgz#2100ba90023c8184bd1ea7a63f194b15e8c2dfe1"
+"@angular/core@~2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.1.tgz#3a6d2dc7fd86fdebe4febae7eb28abad7d04c76a"
 
-"@angular/forms@~2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.1.1.tgz#d7b79d8078cd30107d43666f4af3d7ac6600b083"
+"@angular/forms@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.4.1.tgz#440ff9b864b3b79c55423c9ce5863030a25767ce"
 
 "@angular/http@~2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@angular/http/-/http-2.1.1.tgz#6cec2c675aa0b8f8e7f809d617e4cde5b713437a"
 
-"@angular/platform-browser-dynamic@~2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.1.1.tgz#d1e671abbc35c4c3dab01d266a239ebfb0ef8b6e"
+"@angular/platform-browser-dynamic@~2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.4.1.tgz#5fb72038f76c1e3646cea95f5b4722d67a4419dd"
 
-"@angular/platform-browser@~2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.1.1.tgz#03687a14bb914b113d1068aa0a44b5820109c0c0"
+"@angular/platform-browser@~2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.4.1.tgz#4eaa829b450be34f0029796b6c3b99e27d3d5740"
 
 "@angular/router@~3.1.1":
   version "3.1.1"
@@ -3627,9 +3627,9 @@ ripemd160@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-0.2.0.tgz#2bf198bde167cacfa51c0a928e84b68bbe171fce"
 
-rxjs@5.0.0-beta.12:
-  version "5.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-beta.12.tgz#cdfde2d8c4639d20ae7794bff8fddf32da7ad337"
+rxjs@5.0.0-rc.4:
+  version "5.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-rc.4.tgz#a4d08bc5d7f30d48ed7130e2995490c326a325c4"
   dependencies:
     symbol-observable "^1.0.1"
 

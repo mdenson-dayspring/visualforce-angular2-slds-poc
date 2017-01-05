@@ -26,6 +26,15 @@ export class ShiftReportEffects {
                 .catch(() => of(new shiftReport.LoadSuccessAction(undefined)));
         });
 
+    @Effect()
+    saveHourLog$: Observable<Action> = this.actions$
+        .ofType(shiftReport.ACTION.SAVE_HOURLOG)
+        .switchMap(action => {
+            return this.vf.saveHourLog(action.payload)
+                .map(reports => new shiftReport.LoadSuccessAction(reports))
+                .catch(() => of(new shiftReport.LoadSuccessAction(undefined)));
+        });
+
     constructor(private actions$: Actions, private vf: VFService) { }
 
 }

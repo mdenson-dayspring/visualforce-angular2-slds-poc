@@ -6,7 +6,7 @@ export class ShiftReport {
     endHour: number;
 
     hourComment: string[];
-    hourPicklist: string[];
+    hourDescribe: string[];
 
     hourLog: HourLog[];
 
@@ -19,12 +19,11 @@ export class ShiftReport {
                 return start <= key && key < end;
             })
             .map((value, key) => {
-                let hour = key + start;
-                return {
-                    hour: hour,
-                    mood: this.hourPicklist[hour] ? this.hourPicklist[hour] : 'n/a',
-                    comment: value
-                };
+                let hourNum = key + start;
+                let hour = new HourLog(this.id, hourNum);
+                hour = hour.setDescribe(this.hourDescribe[hourNum] ?
+                    this.hourDescribe[hourNum] : 'n/a');
+                return hour.setComment(value);;
             });
     }
 }

@@ -1,3 +1,4 @@
+var fs = require('fs');
 var webpackMerge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
@@ -19,6 +20,13 @@ module.exports = webpackMerge(commonConfig, {
 
   devServer: {
     historyApiFallback: true,
-    stats: 'minimal'
+    stats: 'minimal',
+    progress: true,
+    inline: true,
+    port: 3000,
+    https: true,
+    cacert: fs.readFileSync(helpers.root('config/ssl/dst-ca.crt'), 'utf8'),
+    cert: fs.readFileSync(helpers.root('config/ssl/localhost.crt'), 'utf8'),
+    key: fs.readFileSync(helpers.root('config/ssl/localhost.pem'), 'utf8')
   }
 });

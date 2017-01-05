@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
 
 import { ShiftReport } from '../models/shift-report';
+import { HourLog } from '../models/hour-log';
 
 import { EnvService } from './env.service';
 
@@ -51,7 +52,7 @@ export class VFService {
               record.get('Hr_Desc_22__c'),
               record.get('Hr_Desc_23__c')
             ];
-            shiftReport.hourPicklist = [
+            shiftReport.hourDescribe = [
               record.get('Hr_Picklist_00__c'),
               record.get('Hr_Picklist_01__c'),
               record.get('Hr_Picklist_02__c'),
@@ -80,11 +81,15 @@ export class VFService {
             shiftReport.setHours(record.get('Start_Hour__c'), record.get('End_Hour__c'));
 
             subscriber.next(shiftReport);
-            this.$log.debug(shiftReport);
           });
           subscriber.complete();
         }
       });
     });
+  }
+
+  saveHourLog(hour: HourLog): Observable<ShiftReport> {
+    this.$log.debug(hour);
+    return this.fetchShiftReport();
   }
 }

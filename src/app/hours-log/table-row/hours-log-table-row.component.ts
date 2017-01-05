@@ -24,10 +24,5 @@ export class HoursLogTableRowComponent {
     this.$log.debug('clicked edit');
     this.store.dispatch(new page.OpenAction(this.hour.hour));
   }
-  clickSave() {
-    this.store.dispatch(new page.CloseAction(this.hour.hour));
-  }
-  clickCancel() {
-    this.store.dispatch(new page.CloseAction(this.hour.hour));
-  }
+
 }

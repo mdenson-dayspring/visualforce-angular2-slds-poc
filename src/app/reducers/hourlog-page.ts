@@ -25,6 +25,7 @@ export function reducer(state = initialState, action: hourLogPage.Actions): Stat
         readOnly: state.readOnly,
         openRow: action.payload
       };
+
     case hourLogPage.ACTION.CLOSE:
       return {
         readOnly: state.readOnly,
